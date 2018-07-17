@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+  <div class="col-sm-12 col-md-10 col-xl-8" align="right">
+    <div class="table-responsive">
+      <table class="table table-hovered">
+        <thead>
+          <tr>
+            <th class="col">Nome</th>
+            <th class="col">Cadastro</th>
+            <th class="col">Alterar</th>
+            <th class="col">Remover</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of books">
+            <td>{{book.name}}</td>
+            <td>{{book.registrationDate}}</td>
+            <td>
+              <button class="btn btn-outline-warning btn-sm" title="Alterar" (click)="Alterar(book.id)">
+                <i class="material-icons">edit</i>
+              </button>
+            </td>
+            <td>
+              <button class="btn btn-outline-danger btn-sm" title="Remover" (click)="Remover(book.id)">
+                <i class="material-icons">remove_circle_outline</i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button class="position-button btn btn-outline-success" (click)="insertNewBook()" title="Incluir">
+      <i class="material-icons">add</i>
+    </button>
+  </div>
+</div>
